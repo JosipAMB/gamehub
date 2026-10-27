@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
+            $table->text('body');
+            $table->foreignId('topic_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
