@@ -13,7 +13,11 @@
 
         @forelse ($threads as $thread)
             <article>
-                <h3>{{ $thread->title }}</h3>
+                <h3>
+                    <a href="{{ route('threads.show', $thread) }}">
+                        {{ $thread->title }}
+                    </a>
+                </h3>
 
                 <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                     {{ $thread->description }}
