@@ -8,10 +8,23 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('username')->nullable()->unique();
-            $table->boolean('is_admin')->default(false);
-        });
+        if (! Schema::hasColumn('users', 'username')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('username')->nullable();
+            });
+        }
+
+        if (! Schema::hasIndex('users', ['username'], 'unique')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->unique('username');
+            });
+        }
+
+        if (! Schema::hasColumn('users', 'is_admin')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->boolean('is_admin')->default(false);
+            });
+        }
     }
 
     public function down(): void

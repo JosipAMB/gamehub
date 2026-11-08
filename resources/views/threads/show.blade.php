@@ -108,6 +108,11 @@
                                     @error('body') <p class="gh-error">{{ $message }}</p> @enderror
                                     <button class="gh-button gh-button-secondary" type="submit">Reactie plaatsen</button>
                                 </form>
+                            @else
+                                <p class="gh-muted">
+                                    <a href="{{ route('login') }}">Log in om mee te praten</a>
+                                    · <a href="{{ route('register') }}">Nog geen account? Registreren</a>
+                                </p>
                             @endauth
                         </div>
                     </article>
@@ -136,6 +141,7 @@
                 <h2>Praat mee met de community</h2>
                 <p class="gh-description">Log in om een onderwerp te starten of te reageren.</p>
                 <a class="gh-button" href="{{ route('login') }}">Inloggen</a>
+                <a class="gh-button gh-button-secondary" href="{{ route('register') }}">Nog geen account? Registreren</a>
             </section>
         @endauth
     </main>

@@ -44,4 +44,9 @@
             </x-primary-button>
         </div>
     </form>
+
+    <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">
+        Nog geen account?
+        <a class="underline hover:text-gray-900 dark:hover:text-gray-100" href="{{ route('register') }}">Registreren</a>
+    </p>
 </x-guest-layout>

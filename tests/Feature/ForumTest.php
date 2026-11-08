@@ -30,7 +30,9 @@ class ForumTest extends TestCase
 
         $this->get(route('threads.show', $thread))
             ->assertOk()
-            ->assertSee('Favoriete game');
+            ->assertSee('Favoriete game')
+            ->assertSee('Log in om mee te praten')
+            ->assertSee(route('register'));
 
         $this->post(route('replies.store', $topic), ['body' => 'Ik speel Minecraft.'])
             ->assertRedirect(route('login'));
