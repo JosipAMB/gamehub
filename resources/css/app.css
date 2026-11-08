@@ -1,3 +1,394 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    color-scheme: light;
+    --gh-bg: #f5f6f7;
+    --gh-panel: #fff;
+    --gh-border: #e1e4e8;
+    --gh-text: #24292f;
+    --gh-muted: #68717d;
+    --gh-accent: #3563a9;
+}
+
+.gh-page {
+    min-height: 100vh;
+    color: var(--gh-text);
+    background: var(--gh-bg);
+    font-family: Figtree, ui-sans-serif, system-ui, sans-serif;
+}
+
+.gh-container {
+    width: min(100% - 36px, 900px);
+    margin-inline: auto;
+}
+
+.gh-header {
+    border-bottom: 1px solid var(--gh-border);
+    background: #fff;
+}
+
+.gh-nav {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.gh-brand {
+    color: var(--gh-text);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.gh-brand-icon {
+    display: none;
+}
+
+.gh-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    color: var(--gh-muted);
+    font-size: 14px;
+}
+
+.gh-nav-links a,
+.gh-link {
+    color: var(--gh-accent);
+    text-decoration: none;
+}
+
+.gh-nav-links a:hover,
+.gh-link:hover,
+.gh-back:hover {
+    text-decoration: underline;
+}
+
+.gh-form-inline {
+    display: inline;
+}
+
+.gh-nav-button {
+    padding: 6px 10px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    color: var(--gh-text);
+    background: #fff;
+    cursor: pointer;
+    font: inherit;
+}
+
+.gh-main {
+    padding-block: 36px 56px;
+}
+
+.gh-hero {
+    margin-bottom: 32px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--gh-border);
+}
+
+.gh-eyebrow {
+    margin: 0 0 8px;
+    color: var(--gh-muted);
+    font-size: 13px;
+}
+
+.gh-title {
+    margin: 0;
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.gh-description {
+    margin: 8px 0 0;
+    color: var(--gh-muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.gh-section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.gh-section-heading h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 650;
+}
+
+.gh-muted,
+.gh-meta {
+    color: var(--gh-muted);
+    font-size: 13px;
+}
+
+.gh-list {
+    display: grid;
+    gap: 10px;
+}
+
+.gh-card {
+    padding: 18px;
+    border: 1px solid var(--gh-border);
+    border-radius: 8px;
+    background: var(--gh-panel);
+}
+
+.gh-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.gh-card h2,
+.gh-card h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 650;
+}
+
+.gh-card p {
+    color: var(--gh-muted);
+    line-height: 1.6;
+}
+
+.gh-category-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.gh-card .gh-meta {
+    margin-bottom: 0;
+}
+
+.gh-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.gh-count {
+    flex: none;
+    color: var(--gh-muted);
+    font-size: 13px;
+}
+
+.gh-panel {
+    margin-top: 22px;
+    padding: 20px;
+    border: 1px solid var(--gh-border);
+    border-radius: 8px;
+    background: var(--gh-panel);
+}
+
+.gh-panel h2 {
+    margin: 0 0 14px;
+    font-size: 19px;
+}
+
+.gh-form {
+    display: grid;
+    gap: 8px;
+}
+
+.gh-form label {
+    margin-top: 6px;
+    color: var(--gh-text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gh-input {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 11px;
+    border: 1px solid #c9cfd6;
+    border-radius: 6px;
+    color: var(--gh-text);
+    background: #fff;
+    font: inherit;
+}
+
+.gh-input:focus {
+    border-color: var(--gh-accent);
+    outline: 2px solid #d5e2f5;
+}
+
+.gh-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.gh-button {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    margin-top: 8px;
+    padding: 8px 13px;
+    border: 1px solid var(--gh-accent);
+    border-radius: 6px;
+    color: #fff;
+    background: var(--gh-accent);
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.gh-button:hover {
+    background: #294f89;
+}
+
+.gh-button-secondary {
+    border-color: var(--gh-border);
+    color: var(--gh-text);
+    background: #fff;
+}
+
+.gh-button-secondary:hover {
+    background: #f1f2f4;
+}
+
+.gh-button-danger {
+    border-color: #b94a48;
+    background: #b94a48;
+}
+
+.gh-button-danger:hover {
+    background: #963a38;
+}
+
+.gh-delete-form {
+    margin-top: 12px;
+}
+
+.gh-alert {
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 1px solid #b8d7bf;
+    border-radius: 6px;
+    color: #285d35;
+    background: #f0f8f1;
+}
+
+.gh-error {
+    margin: 0;
+    color: #b42318;
+    font-size: 13px;
+}
+
+.gh-back {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--gh-accent);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.gh-replies {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--gh-border);
+}
+
+.gh-replies h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.gh-reply {
+    padding: 12px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    background: #f8f9fa;
+}
+
+.gh-reply p {
+    margin: 0;
+}
+
+.gh-reply .gh-meta {
+    margin-bottom: 5px;
+}
+
+.gh-username {
+    color: var(--gh-accent);
+}
+
+.gh-details {
+    margin-top: 10px;
+    color: var(--gh-accent);
+    font-size: 14px;
+}
+
+.gh-details summary {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.gh-details[open] .gh-form {
+    margin-top: 10px;
+    color: var(--gh-text);
+}
+
+.gh-empty {
+    padding: 22px;
+    border: 1px dashed #c9cfd6;
+    border-radius: 8px;
+    color: var(--gh-muted);
+    text-align: center;
+}
+
+.gh-footer {
+    padding-block: 18px;
+    border-top: 1px solid var(--gh-border);
+    color: var(--gh-muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .gh-container {
+        width: min(100% - 28px, 900px);
+    }
+
+    .gh-nav {
+        min-height: 56px;
+        flex-wrap: wrap;
+        padding-block: 10px;
+    }
+
+    .gh-nav-links {
+        justify-content: flex-start;
+        gap: 8px 12px;
+        font-size: 13px;
+    }
+
+    .gh-main {
+        padding-block: 26px 40px;
+    }
+
+    .gh-card {
+        padding: 15px;
+    }
+}
